@@ -41,8 +41,8 @@ func TestLetStatements(t *testing.T) {
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
 	if s.TokenLiteral() != "let" {
-		t.Error("s.TokenLiteral not 'let'. got=%q", s.TokenLiteral())
-		return False
+		t.Errorf("s.TokenLiteral not 'let'. got=%q", s.TokenLiteral())
+		return false
 	}
 
 	letStmt, ok := s.(*ast.LetStatement)
