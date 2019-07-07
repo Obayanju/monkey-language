@@ -81,10 +81,10 @@ func (ls *LetStatement) String() string {
 func (ls *ReturnStatement) String() string {
 	var out bytes.Buffer
 
-	out.WriteString(rs.TokenLiteral() + " ")
+	out.WriteString(ls.TokenLiteral() + " ")
 
-	if rs.ReturnValue != nil {
-		out.WriteString(rs.ReturnValue.String())
+	if ls.ReturnValue != nil {
+		out.WriteString(ls.ReturnValue.String())
 	}
 
 	out.WriteString(";")
