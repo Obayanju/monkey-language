@@ -14,7 +14,12 @@ const (
 	RETURN_VALUE_OBJ = "RETURN_VALUE"
 	ERROR_OBJ        = "ERROR"
 	FUNCTION_OBJ     = "FUNCTION"
+	STRING_OBJ       = "STRING"
 )
+
+type String struct {
+	Value string
+}
 
 type Function struct {
 	Parameters []*ast.Identifier
@@ -47,8 +52,10 @@ type Boolean struct {
 
 type Null struct{}
 
-func (f *Function) Type() ObjectType { return FUNCTION_OBJ }
+func (s *String) Type() ObjectType { return STRING_OBJ }
+func (s *String) Inspect() string  { return s.Value }
 
+func (f *Function) Type() ObjectType { return FUNCTION_OBJ }
 func (f *Function) Inspect() string {
 	var out bytes.Buffer
 
