@@ -34,13 +34,13 @@ const (
 	// Delimeters
 	COMMA     = ","
 	SEMICOLON = ";"
-
-	LPAREN   = "("
-	RPAREN   = ")"
-	LBRACE   = "{"
-	RBRACE   = "}"
-	LBRACKET = "["
-	RBRACKET = "]"
+	COLON     = ":"
+	LPAREN    = "("
+	RPAREN    = ")"
+	LBRACE    = "{"
+	RBRACE    = "}"
+	LBRACKET  = "["
+	RBRACKET  = "]"
 
 	// Keywords
 	FUNCTION = "FUNCTION"
