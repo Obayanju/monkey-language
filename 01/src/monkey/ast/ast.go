@@ -46,6 +46,11 @@ type StringLiteral struct {
 	Value string
 }
 
+type ArrayLiteral struct {
+	Token    token.Token
+	Elements []Expression
+}
+
 type Boolean struct {
 	Token token.Token
 	Value bool
@@ -96,6 +101,23 @@ type CallExpression struct {
 	Token     token.Token // the '(' token
 	Function  Expression  // Identifier of FunctionLiteral
 	Arguments []Expression
+}
+
+func (al *ArrayLiteral) expressionNode()      {}
+func (al *ArrayLiteral) TokenLiteral() string { return al.Token.Literal }
+func (al *ArrayLiteral) String() string {
+	var out bytes.Buffer
+
+	elements := []string{}
+	for _, el := range al.Elements {
+		elements = append(elements, el.String())
+	}
+
+	out.WriteString("[")
+	out.WriteString(strings.Join(elements, ", "))
+	out.WriteString("]")
+
+	return out.String()
 }
 
 func (sl *StringLiteral) expressionNode()      {}
