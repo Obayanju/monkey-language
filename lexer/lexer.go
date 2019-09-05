@@ -1,7 +1,7 @@
 // This does lexical analysis - transforms source code to tokens
 package lexer
 
-import "monkey-lang/01/src/monkey/token"
+import "monkey-lang/token"
 
 type Lexer struct {
 	input        string

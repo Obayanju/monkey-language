@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"hash/fnv"
-	"monkey-lang/01/src/monkey/ast"
+	"monkey-lang/ast"
 	"strings"
 )
 
